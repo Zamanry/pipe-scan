@@ -54,9 +54,9 @@ if len(sys.argv) != 3:
 
 host, port = sys.argv[1],  int(sys.argv[2])
 
-print "[*] pipe-scan 0.1"
-print "[*] by p33kab00 (mudnorb@gmail.com)"
-print "[*] # of checks: %i\n" %(len(pipes))
+print("[*] pipe-scan 0.1")
+print("[*] by p33kab00 (mudnorb@gmail.com)")
+print("[*] # of checks: %i\n" %(len(pipes)))
 
 start = time.time()*1000
 cns = 0
@@ -67,8 +67,8 @@ for pipe_name in pipes:
     trans.set_dport(port)
     dce = trans.get_dce_rpc()
     dce.connect()
-    print "[+] Found open pipe"
-    print "    %s\n" %(pipe_name)
+    print("[+] Found open pipe")
+    print("    %s\n" %(pipe_name))
     cns += 1
     dce.disconnect()
   except Exception as e:
@@ -76,4 +76,4 @@ for pipe_name in pipes:
     pass
 
 stop = time.time()*1000
-print "[*] Found %i open pipes in %i ms." %(cns, int(stop-start))
+print("[*] Found %i open pipes in %i ms." %(cns, int(stop-start)))
